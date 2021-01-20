@@ -6,9 +6,13 @@ const btns = document.querySelectorAll(".btn");
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
-    const styles = e.currentTarget.classList;
+    const styles = e.target.classList;
     if (styles.contains("decrease")) {
       count--;
+      // if dont want have minus number
+      if(count <= 0) {
+        count = 0
+      }
     } else if (styles.contains("increase")) {
       count++;
     } else {
